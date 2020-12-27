@@ -79,17 +79,17 @@ gulp.task('copy:.htaccess', () =>
     .pipe(gulp.dest(dirs.dist))
 );
 
-gulp.task('copy:index.html', () => {
+gulp.task('copy:html', () => {
 
   let modernizrVersion = pkg.devDependencies.modernizr;
 
-  return gulp.src(`${dirs.src}/index.html`)
+  return gulp.src(`${dirs.src}/*.html`)
     .pipe(plugins().replace(/{{MODERNIZR_VERSION}}/g, modernizrVersion))
     .pipe(gulp.dest(dirs.dist));
 });
 
 gulp.task('copy:license', () =>
-  gulp.src('LICENSE.txt')
+  gulp.src('LICENSE')
     .pipe(gulp.dest(dirs.dist))
 );
 
@@ -162,7 +162,7 @@ gulp.task(
   'copy',
   gulp.series(
     'copy:.htaccess',
-    'copy:index.html',
+    'copy:html',
     'copy:license',
     'copy:style',
     'copy:misc',
