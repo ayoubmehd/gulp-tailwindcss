@@ -51,7 +51,7 @@ const expectedFilesInDistDir = [
   'js/vendor/',
   `js/vendor/modernizr-${pkg.devDependencies.modernizr}.min.js`,
 
-  'LICENSE.txt',
+  'LICENSE',
   'robots.txt',
   'site.webmanifest',
   'tile-wide.png',
